@@ -1,5 +1,6 @@
 const express = require('express');
 const fs = require('fs');
+const axios = require('axios')
 const morgan = require('morgan');
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -25,8 +26,12 @@ app.use((req, res, next) => {
     next();
 });
 
+
+
 // 3) Routes
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
+
+
 
 module.exports = app;

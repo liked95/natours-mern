@@ -8,7 +8,7 @@ const {
     getTour,
     updateTour,
     deleteTour,
-
+    aliasTopTours
 } = tourController;
 
 // router.param('id', checkID);
@@ -16,6 +16,8 @@ const {
 // Create a checkBody Middleware func if contains name and price property
 // If not, send back 400
 // Add it to the post handler stack
+router.route('/top-5-cheap').get(aliasTopTours, getAllTours)
+
 router
     .route('/')
     .get(getAllTours)
