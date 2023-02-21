@@ -8,7 +8,9 @@ const {
     getTour,
     updateTour,
     deleteTour,
-    aliasTopTours
+    aliasTopTours,
+    getTourStats,
+    getMonthlyPlan
 } = tourController;
 
 // router.param('id', checkID);
@@ -17,6 +19,8 @@ const {
 // If not, send back 400
 // Add it to the post handler stack
 router.route('/top-5-cheap').get(aliasTopTours, getAllTours)
+router.route('/tour-stats').get(getTourStats)
+router.route('/monthly-plan/:year').get(getMonthlyPlan)
 
 router
     .route('/')
